@@ -39,108 +39,11 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ComposeCampLayoutIntroTheme {
-                // A surface container using the 'background' color from the theme
-//                Surface(
-//                    modifier = Modifier.fillMaxSize(),
-//                    color = MaterialTheme.colorScheme.background
-//                ) {
-                //Greeting("Android")
-                Box(
-                    modifier = Modifier
-                        .height(50.dp)
-                        .fillMaxWidth()
-                        .background(MaterialTheme.colorScheme.secondary),
-                ) {
-
-                    //  }
-                }
+                Text("Hello World!")
             }
         }
     }
 }
 
-@Composable
-fun WelcomePage_v1(modifier: Modifier = Modifier) {
-    Column(
-        modifier = modifier
-            .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
-//        Text(
-//            text = "Focus, Relax & Sleep",
-//            style = MaterialTheme.typography.titleLarge,
-//            color = MaterialTheme.colorScheme.secondary
-//        )
-        Column(modifier = Modifier.weight(weight = .2f).fillMaxWidth(), verticalArrangement = Arrangement.Center) {
-            Text(
-                modifier = Modifier
-                    .fillMaxWidth(),
-                text = buildAnnotatedString {
-                    append("Focus, Relax\n")
-                    withStyle(
-                        style = SpanStyle(
-                            color = MaterialTheme.colorScheme.primary
-                        )
-                    ) {
-                        append(" & ")
-                    }
-                    append("Sleep")
-                },
-                color = MaterialTheme.colorScheme.onBackground,
-                fontSize = 42.sp,
-                fontWeight = FontWeight.Bold,
-                textAlign = TextAlign.Center,
-                lineHeight = 42.sp,
-            )
-        }
-        Image(
-            painter = painterResource(id = R.drawable.tutorial_background),
-            contentDescription = null,
-            modifier = Modifier
-                .fillMaxWidth()
-                .weight(weight = .6f, fill = true)
-        )
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp, vertical = 24.dp)
-                .weight(weight = .2f),
-            horizontalArrangement = Arrangement.SpaceEvenly,
-            verticalAlignment = Alignment.Bottom
-        ) {
-            Button(
-                onClick = { /*TODO*/ },
-                modifier = Modifier.widthIn(min = 100.dp),
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = Color.Transparent,
-                    contentColor = MaterialTheme.colorScheme.onBackground
-                )
-            ) {
-                Text(text = "Skip")
-            }
 
-            Button(
-                onClick = { /*TODO*/ },
-                modifier = Modifier.widthIn(min = 100.dp),
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.colorScheme.onBackground,
-                    contentColor = MaterialTheme.colorScheme.background
-                )
-            ) {
-                Text(text = "Let's start")
-            }
-
-        }
-    }
-}
-
-@Preview
-@Composable
-fun WelcomePage_v1Preview() {
-    ComposeCampLayoutIntroTheme {
-        WelcomePage_v1()
-    }
-}
 
