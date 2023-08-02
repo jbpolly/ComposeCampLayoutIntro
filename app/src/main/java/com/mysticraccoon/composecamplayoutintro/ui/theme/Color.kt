@@ -12,6 +12,7 @@ val MeditationOnBackground = Color(0xFFFEFEFE)
 val MeditationDisabledText = Color(0xFF4A4F57)
 val MeditationWhite20 = Color(0x33FFFFFF)
 val MeditationDarkText = Color(0xFF13151A)
+val MeditationChipGrey = Color(0xFF3F4650)
 
 
 val White = Color(0xFFFFFFFF)
