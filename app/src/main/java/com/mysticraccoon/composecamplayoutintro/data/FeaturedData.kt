@@ -16,7 +16,7 @@ data class FeaturedData(
     val duration: Int,
     val backgroundColor: Color,
     val icon: @Composable () -> Unit
-    )
+)
 
 fun getFeaturedData(): List<FeaturedData>{
     return listOf(
