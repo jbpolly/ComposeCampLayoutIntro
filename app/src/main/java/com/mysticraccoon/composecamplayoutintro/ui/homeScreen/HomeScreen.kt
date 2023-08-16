@@ -28,13 +28,13 @@ import com.mysticraccoon.composecamplayoutintro.data.getMostPlayedData
 import com.mysticraccoon.composecamplayoutintro.ui.theme.ComposeCampLayoutIntroTheme
 
 @Composable
-fun HomePage(modifier: Modifier = Modifier) {
+fun HomePage(modifier: Modifier = Modifier, onNotificationClick: (String) -> Unit = {}) {
     Column(
         modifier = modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
     ) {
-        HomeHeader()
+        HomeHeader(onNotificationClick)
         ChipList(getChipData())
         FeaturedSection(getFeaturedData())
         MostPlayingSection(mostPlayedData = getMostPlayedData())
@@ -89,13 +89,13 @@ fun FeaturedSection(featuredData: List<FeaturedData>) {
 
 @Composable
 fun MostPlayingSection(mostPlayedData: List<MostPlayed>) {
-    Column {
+    Column(verticalArrangement = Arrangement.Center) {
         Row {
             Text(
                 modifier = Modifier
                     .padding(horizontal = 24.dp)
                     .weight(1f),
-                text = "Featured",
+                text = "Most Played",
                 color = MaterialTheme.colorScheme.onBackground,
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold,
@@ -112,7 +112,7 @@ fun MostPlayingSection(mostPlayedData: List<MostPlayed>) {
 
         LazyColumn(
             modifier = Modifier
-                .padding(top = 16.dp, bottom = 16.dp)
+                .padding(top = 16.dp)
                 .fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(8.dp),
             contentPadding = PaddingValues(start = 4.dp, end = 4.dp)

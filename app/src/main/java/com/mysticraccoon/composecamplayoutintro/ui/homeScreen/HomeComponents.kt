@@ -1,11 +1,11 @@
 package com.mysticraccoon.composecamplayoutintro.ui.homeScreen
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
@@ -36,12 +36,11 @@ import com.mysticraccoon.composecamplayoutintro.data.getMostPlayedData
 import com.mysticraccoon.composecamplayoutintro.ui.theme.ComposeCampLayoutIntroTheme
 import com.mysticraccoon.composecamplayoutintro.ui.theme.MeditationChipGrey
 import com.mysticraccoon.composecamplayoutintro.ui.theme.MeditationDisabled
-import com.mysticraccoon.composecamplayoutintro.ui.theme.MeditationDisabledText
 import com.mysticraccoon.composecamplayoutintro.ui.theme.MeditationItemBackground
 import com.mysticraccoon.composecamplayoutintro.ui.theme.MeditationWhite50
 
 @Composable
-fun HomeHeader() {
+fun HomeHeader(onNotificationClick: (String) -> Unit) {
     Row(
         modifier = Modifier
             .padding(top = 24.dp, start = 24.dp, end = 24.dp, bottom = 0.dp)
@@ -68,7 +67,10 @@ fun HomeHeader() {
                 .background(
                     MeditationItemBackground
                 )
-                .size(40.dp),
+                .size(40.dp)
+                .clickable {
+                    onNotificationClick("Juliana")
+                },
             contentAlignment = Alignment.Center
         ) {
             Icon(
