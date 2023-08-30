@@ -15,4 +15,8 @@ sealed class Route (val route: String){
         fun fromHomeToMeditationDetails(name: String) = "MeditationDetails/$name"
     }
 
+    object Sounds: Route("Sounds")
+
+    object Tracking: Route("Tracking")
+
 }
